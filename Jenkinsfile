@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+    tools {
+        maven 'mymaven'
+    }
     environment {
         DOCKER_REGISTRY = 'your-registry.com'
         BACKEND_IMAGE = "${DOCKER_REGISTRY}/myapp-backend:${BUILD_NUMBER}"
